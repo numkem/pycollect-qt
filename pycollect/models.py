@@ -31,7 +31,7 @@ class SearchModel(QAbstractTableModel):
             return 0
 
     def sort(self, col, order):
-        """sort table by given column number col"""
+        "Sort table by given column number"
         self.emit(SIGNAL("layoutAboutToBeChanged()"))
         self._data = sorted(self._data,
             key=operator.itemgetter(col))
@@ -55,4 +55,3 @@ class GameListModel(QAbstractListModel):
 
     def rowCount(self, parent):
         return len(self.games)
-

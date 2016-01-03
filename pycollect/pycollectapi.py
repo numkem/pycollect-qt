@@ -46,3 +46,6 @@ class PycollectApi(object):
 
     def game_count(self):
         return len(self.games)
+
+    def game_by_name(self, name):
+        return self._games_by_attr('name', name)[0]

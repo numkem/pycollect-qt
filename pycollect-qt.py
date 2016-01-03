@@ -6,5 +6,8 @@ from pycollect import MainWindow
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MainWindow()
+    try:
+        window = MainWindow(sys.argv[1])
+    except KeyError:
+        window = MainWindow()
     sys.exit(app.exec_())
